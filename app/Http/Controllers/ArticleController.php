@@ -15,7 +15,8 @@ class ArticleController extends Controller
     public function index()
     {
         $articles = Article::all();
-        $data = ['articles' => $articles];
+        $sort = Article::orderBy('date', 'asc')->get();
+        $data = ['articles' => $sort];
         return view('articles.index', $data);
     }
 
@@ -43,8 +44,6 @@ class ArticleController extends Controller
             'title' => 'required|max:255',
             'date' => 'required',
             'content' => 'required',
-            'body' => 'required',
-            'evaluation' => 'required'
         ]);
         $article = new Article();
         $article->title = $request->title;
@@ -113,5 +112,10 @@ class ArticleController extends Controller
     {
         $article->delete();
         return redirect(route('articles.index'));
+    }
+
+    public function sort(Article $article)
+    {
+        $article = Article::orderBy('date', 'asc')->get();
     }
 }

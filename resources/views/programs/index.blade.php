@@ -4,7 +4,7 @@
 @endsection()
 @section('content')
 <input type="button" onclick="location.href='/articles'" value="完了済み">
-<p><a href="{{ route('programs.create') }}">予定を入れる</a></p>
+<p><a href="{{ route('programs.create') }}">予定を書く</a></p>
         @foreach ($program as $program)
         <program class="program-item">
             <div class="program-title">
@@ -12,7 +12,6 @@
             </div>
             <div class="program-date">{{ $program->date }}</div>
             <div class="program-time">{{ $program->time }}</div>
-            <!--<div class="program-info">{{ $program->created_at }}</div>-->
         </program>
         @endforeach
 @endsection()

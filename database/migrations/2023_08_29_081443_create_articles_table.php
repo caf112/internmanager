@@ -18,8 +18,8 @@ class CreateArticlesTable extends Migration
             $table->string('title');//企業名
             $table->date('date');//日付
             $table->text('content');//内容
-            $table->text('body');//感想
-            $table->char('evaluation');
+            $table->text('body')->default('感想');
+            $table->char('evaluation')->default('B');
             $table->timestamps();
         });
     }

@@ -15,7 +15,8 @@ class ProgramController extends Controller
     public function index()
     {
         $program = Program::all();
-        $data = ['program' => $program];
+        $sort = Program::orderBy('date', 'asc')->orderBy('time', 'asc')->get();
+        $data = ['program' => $sort];
         return view('programs.index', $data);
     }
 

@@ -1,6 +1,6 @@
 @extends('layouts.app')
 @section('head')
-<a href="/" class="site-title">企業一覧</a>
+<a href="/articles" class="site-title">企業一覧</a>
 @endsection()
 @section('content')
 <input type="button" onclick="location.href='/programs'" value="スケジュール">
@@ -11,7 +11,6 @@
             <a href="{{ route('articles.show', $article) }}">{{ $article->title }}</a>   
             </div>
             <div class="article-date">{{ $article->date }}</div>
-            <!--<div class="article-info">{{ $article->created_at }}</div>-->
         </article>
         @endforeach
 @endsection()
