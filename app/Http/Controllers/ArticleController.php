@@ -118,4 +118,29 @@ class ArticleController extends Controller
     {
         $article = Article::orderBy('date', 'asc')->get();
     }
+
+    public function search(Request $request)
+    {
+         $articles = Article::paginate(20);
+
+        $search = $request->input('search');
+
+        $query = Article::query();
+
+        if ($search) {
+            $spaceConversion = mb_convert_kana($search, 's');
+            $wordArraySearched = preg_split('/[\s,]+/', $spaceConversion, -1, PREG_SPLIT_NO_EMPTY);
+
+            foreach($wordArraySearched as $value) {
+                $query->where('title', 'like', '%'.$value.'%');
+            }
+            $articles = $query->paginate(20);
+        }
+
+        return view('articles.index')
+            ->with([
+                'articles' => $articles,
+                'search' => $search,
+            ]);
+        }
 }

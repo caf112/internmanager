@@ -37,9 +37,8 @@ class MoveArticle extends Command
      *
      * @return int
      */
-    public function handle()
-{
-    $articles = Program::whereDate('date', '<', now())->get();
+    public function handle(){
+    $articles = Program::whereDate('date', '<=', now())->whereTime('time', '<=', now())->get();
 
     DB::beginTransaction(); 
     try {
