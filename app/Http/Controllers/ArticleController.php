@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\Article;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Log;
+
 
 class ArticleController extends Controller
 {
@@ -27,6 +29,7 @@ class ArticleController extends Controller
      */
     public function create()
     {
+
         $article = new Article();
         $data = ['article' => $article];
         return view('articles.create', $data);
@@ -121,6 +124,8 @@ class ArticleController extends Controller
 
     public function search(Request $request)
     {
+        Log::debug('test2');
+
          $articles = Article::paginate(20);
 
         $search = $request->input('search');

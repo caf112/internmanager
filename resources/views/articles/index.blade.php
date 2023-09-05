@@ -24,4 +24,7 @@
             <div class="article-date">{{ $article->date }}</div>
         </article>
         @endforeach
+        @if (count($articles) === 0)
+            <p>No results found for "{{ $search }}"</p>
+        @endif
 @endsection()

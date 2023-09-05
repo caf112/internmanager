@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\Program;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Log;
+
 
 class ProgramController extends Controller
 {
@@ -16,7 +18,7 @@ class ProgramController extends Controller
     {
         $program = Program::all();
         $sort = Program::orderBy('date', 'asc')->orderBy('time', 'asc')->get();
-        $data = ['program' => $sort];
+        $data = ['programs' => $sort];
         return view('programs.index', $data);
     }
 
@@ -114,4 +116,37 @@ class ProgramController extends Controller
         $program->delete();
         return redirect(route('programs.index'));
     }
+
+    public function sort(Program $program)
+    {
+        $program = Program::orderBy('date', 'asc')->get();
+    }
+
+    public function search(Request $request)
+    {
+        Log::debug('test2');
+
+
+         $programs = Program::paginate(20);
+
+        $search = $request->input('search');
+
+        $query = Program::query();
+
+        if ($search) {
+            $spaceConversion = mb_convert_kana($search, 's');
+            $wordArraySearched = preg_split('/[\s,]+/', $spaceConversion, -1, PREG_SPLIT_NO_EMPTY);
+
+            foreach($wordArraySearched as $value) {
+                $query->where('title', 'like', '%'.$value.'%');
+            }
+            $programs = $query->paginate(20);
+        }
+
+        return view('programs.index')
+            ->with([
+                'programs' => $programs,
+                'search' => $search,
+            ]);
+        }
 }
