@@ -5,8 +5,8 @@
 @endsection()
 @section('content')
 <form action="{{ route('articles.store') }}" method="post">
-           @include('articles.form')
-            <button type="submit">記録する</button>
-            <a href="{{ route('articles.index') }}">キャンセル</a>
-        </form>
+    @include('articles.form')
+    <button type="submit">記録する</button>
+    <a href="{{ route('articles.index') }}">キャンセル</a>
+</form>
 @endsection()

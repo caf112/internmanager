@@ -51,6 +51,9 @@ class ArticleController extends Controller
         $article = new Article();
         $article->title = $request->title;
         $article->date = $request->date;
+        $article->period = $request->period;
+        $article->selection = $request->selection;
+        $article->explanation = $request->explanation;
         $article->content = $request->content;
         $article->body = $request->body;
         $article->evaluation = $request->evaluation;
@@ -131,7 +134,7 @@ class ArticleController extends Controller
         $search = $request->input('search');
 
         $query = Article::query();
-
+        
         if ($search) {
             $spaceConversion = mb_convert_kana($search, 's');
             $wordArraySearched = preg_split('/[\s,]+/', $spaceConversion, -1, PREG_SPLIT_NO_EMPTY);

@@ -7,6 +7,9 @@
     <h1 class="article-title">{{ $article->title }}</h1>
     <h1 class="article-date">{{ $article->date }}</h1>
     <div class="article-info">{{ $article->created_at }}</div>
+    <div class="article-period">{!! nl2br(e($article->period)) !!}</div>
+    <div class="article-selection">{!! nl2br(e($article->selection)) !!}</div>
+    <div class="article-explanation">{!! nl2br(e($article->explanation)) !!}</div>
     <div class="article-content">{!! nl2br(e($article->content)) !!}</div>
     <div class="article-body">{!! nl2br(e($article->body)) !!}</div>
     <div class="article-evaluation">{!! nl2br(e($article->evaluation)) !!}</div>
