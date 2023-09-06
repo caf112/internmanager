@@ -53,6 +53,7 @@ class ArticleController extends Controller
         $article->date = $request->date;
         $article->period = $request->period;
         $article->selection = $request->selection;
+        $article->industry = $request->industry;
         $article->explanation = $request->explanation;
         $article->content = $request->content;
         $article->body = $request->body;
