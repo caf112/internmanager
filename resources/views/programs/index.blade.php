@@ -4,6 +4,12 @@
 <h1 class='app-title'>Intern Manager</h1>
 <a href="/programs" class="site-title">予定一覧</a>
 @endsection()
+
+@section('aside')<!--サイドバー-->
+
+あいうえお
+@endsection
+
 @section('content')
 <form method="GET" action="{{ route('programs.search') }}">
     <input type="search" placeholder="企業名を入力" name="search" value="@if (isset($search)) {{ $search }} @endif">
@@ -27,4 +33,6 @@
             <div class="program-time">{{ $program->time }}</div>
         </program>
         @endforeach
+        
 @endsection()
+

@@ -9,9 +9,11 @@
 </head>
 <body>
     <header>
+       
         @yield('head')
     </header>
     <main class="container">
+        @yield('aside')
         @yield('content')
     </main>
     <footer>

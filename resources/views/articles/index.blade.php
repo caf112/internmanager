@@ -4,6 +4,12 @@
 <h1 class='app-title'>Intern Manager</h1>
 <a href="/articles" class="site-title">企業一覧</a>
 @endsection()
+
+@section('aside')<!--サイドバー-->
+
+あいうえお
+@endsection
+
 @section('content')
 <form method="GET" action="{{ route('articles.search') }}">
     <input type="search" placeholder="企業名を入力" name="search" value="@if (isset($search)) {{ $search }} @endif">
