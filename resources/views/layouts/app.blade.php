@@ -13,8 +13,14 @@
         @yield('head')
     </header>
     <main class="container">
-        @yield('aside')
-        @yield('content')
+        <div class="wrapper">
+        <div class="aside">
+            @yield('aside')
+        </div>
+        <div class="content">
+            @yield('content')
+        </div>
+</div>
     </main>
     <footer>
         internmanaget

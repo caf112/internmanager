@@ -39,21 +39,23 @@ footer {
     background:#333;
 }
 
-/*インターンコンテンツ　消した*/
-.intern-contents{
-   display: flex;
-   justify-content: space-between;
-   margin-bottom: 50px;
+/* wrapper内の要素を横に配置するスタイル */
+.wrapper {
+    display: flex;
 }
 
-/*記事部分？　消した*/
-.container{
-    width:75%;
+/* サイドバー（aside）のスタイル */
+.aside {
+    flex: 1; /* 横幅を均等に分配 */
+    padding: 20px; /* 余白を追加（調整可能） */
 }
-/*サイドバー　ない*/
-aside{
-    width:22%;
+
+/* メインコンテンツ（content）のスタイル */
+.content {
+    flex: 2; /* 横幅を均等に分配 */
+    padding: 20px; /* 余白を追加（調整可能） */
 }
+
 
 .container {
     padding: 0 20px;
