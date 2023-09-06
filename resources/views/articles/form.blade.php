@@ -10,8 +10,8 @@
             <dd><input type="radio" name="period" value="P3">短期</dd>
             <dd><input type="radio" name="period" value="P3">長期</dd>
         <dt>選考</dt>
-            <dd><input type="radio" name="selection" value="S1">選考あり</dd>
-            <dd><input type="radio" name="selection" value="S2">選考なし</dd>
+            <dd><input type="radio" name="selection" value="S1">選考なし</dd>
+            <dd><input type="radio" name="selection" value="S2">選考あり</dd>
             <dd><input type="radio" name="selection" value="S3">選考落ち</dd>
         <dt>企業説明</dt>
             <dd><textarea name="explanation" rows="5">{{ old('explanation', $article->explanation) }}</textarea></dd>
