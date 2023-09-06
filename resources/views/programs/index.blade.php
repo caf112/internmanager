@@ -1,5 +1,7 @@
 @extends('layouts.app')
 @section('head')
+
+<h1 class='app-title'>Intern Manager</h1>
 <a href="/programs" class="site-title">予定一覧</a>
 @endsection()
 @section('content')
