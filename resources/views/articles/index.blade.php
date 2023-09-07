@@ -7,7 +7,6 @@
 
 @section('aside')<!--サイドバーーーーーーーーーーーーーーーーーーーーーーーーーーーーー-->
 
-=======
 <!--新規作成ボタン-->
 
 <a href="{{ route('articles.create') }}">
@@ -84,7 +83,6 @@
 <a href="{{ route('selectionFilter', ['selection' => '選考落ち']) }}">選考落ち</a>
 <input type="button" onclick="location.href='/programs'" value="スケジュール">
 <p><a href="{{ route('articles.create') }}">記録を書く</a></p>
-=======
 
 @endsection<!--サイドバーここまでーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー-->
 
