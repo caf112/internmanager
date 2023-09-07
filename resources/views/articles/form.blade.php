@@ -8,7 +8,7 @@
             <dd><input type="radio" name="period" value="P1">1Day</dd>
             <dd><input type="radio" name="period" value="P2">1週間未満</dd>
             <dd><input type="radio" name="period" value="P3">短期</dd>
-            <dd><input type="radio" name="period" value="P3">長期</dd>
+            <dd><input type="radio" name="period" value="P4">長期</dd>
         <dt>選考</dt>
             <dd><input type="radio" name="selection" value="S2">選考あり</dd>
             <dd><input type="radio" name="selection" value="S1">選考なし</dd>
