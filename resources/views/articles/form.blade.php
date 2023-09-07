@@ -5,14 +5,14 @@
         <dt>日時</dt>
             <dd><input type="date" name="date" value="{{ old('date', $article->date) }}"> </dd><!--tableを日時に変更後、datetime-localに変更-->
         <dt>期間</dt>
-            <dd><input type="radio" name="period" value="P1">1Day</dd>
-            <dd><input type="radio" name="period" value="P2">1週間未満</dd>
-            <dd><input type="radio" name="period" value="P3">短期</dd>
-            <dd><input type="radio" name="period" value="P4">長期</dd>
+            <dd><input type="radio" name="period" value="1DAY">1DAY</dd>
+            <dd><input type="radio" name="period" value="1週間未満">1週間未満</dd>
+            <dd><input type="radio" name="period" value="短期">短期</dd>
+            <dd><input type="radio" name="period" value="長期">長期</dd>
         <dt>選考</dt>
-            <dd><input type="radio" name="selection" value="S2">選考あり</dd>
-            <dd><input type="radio" name="selection" value="S1">選考なし</dd>
-            <dd><input type="radio" name="selection" value="S3">選考落ち</dd>
+            <dd><input type="radio" name="selection" value="選考あり">選考あり</dd>
+            <dd><input type="radio" name="selection" value="選考なし">選考なし</dd>
+            <dd><input type="radio" name="selection" value="選考落ち">選考落ち</dd>
         <dt>業種</dt>
             <dd>
                 <select name="industry">

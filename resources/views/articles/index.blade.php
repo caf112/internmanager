@@ -7,8 +7,6 @@
 
 @section('aside')<!--サイドバー-->
 
-あいうえお
-@endsection
 
 @section('content')
 <form method="GET" action="{{ route('articles.search') }}">
@@ -46,18 +44,18 @@
     @csrf
     <select name="period" id="periodFilter">
         <option value="all">全て</option>
-        <option value="P1">1Day</option>
-                <option value="P2">1週間未満</option>
-                <option value="P3">短期</option>
-                <option value="P4">長期</option>
+        <option value="1DAY">1DAY</option>
+                <option value="1週間未満">1週間未満</option>
+                <option value="短期">短期</option>
+                <option value="長期">長期</option>
     </select>
     <button type="submit">絞り込み</button>
 </form>
 <a href="{{ route('selectionFilter', ['selection' => 'all']) }}">全て</a>
-<a href="{{ route('selectionFilter', ['selection' => 'S1']) }}">選考なし</a>
-<a href="{{ route('selectionFilter', ['selection' => 'S2']) }}">選考あり</a>
-<a href="{{ route('selectionFilter', ['selection' => 'S3']) }}">選考落ち</a>
-
+<a href="{{ route('selectionFilter', ['selection' => '選考なし']) }}">選考なし</a>
+<a href="{{ route('selectionFilter', ['selection' => '選考あり']) }}">選考あり</a>
+<a href="{{ route('selectionFilter', ['selection' => '選考落ち']) }}">選考落ち</a>
+@endsection()
 <input type="button" onclick="location.href='/programs'" value="スケジュール">
 <p><a href="{{ route('articles.create') }}">記録を書く</a></p>
         @foreach ($articles as $article)
