@@ -3,7 +3,7 @@ body {/*全部*/
     background: #f5f5f5;
 }
 div{
-   background: #fff; 
+   
 }
 
 input[type="text"],
@@ -21,6 +21,7 @@ header { /*Intern Manager*/
     justify-content: space-between;
     align-items: center;
     padding: 10px 20px;
+    margin-bottom: 50px;
     border-bottom: 1px solid rgba(0, 0, 0, 0.15);
     background: #fff;
     color:#000;
@@ -47,13 +48,15 @@ footer {
 /* サイドバー（aside）のスタイル */
 .aside {
     flex: 1; /* 横幅を均等に分配 */
-    padding: 20px; /* 余白を追加（調整可能） */
+    padding: 30px; /* 余白を追加（調整可能） */
+    background: #fff;
 }
 
 /* メインコンテンツ（content）のスタイル */
 .content {
-    flex: 2; /* 横幅を均等に分配 */
-    padding: 20px; /* 余白を追加（調整可能） */
+    flex: 4; /* 横幅を均等に分配 */
+    padding: 30px; /* 余白を追加（調整可能） */
+    background: #fff;
 }
 
 
