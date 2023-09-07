@@ -10,9 +10,27 @@
             <dd><input type="radio" name="period" value="P3">短期</dd>
             <dd><input type="radio" name="period" value="P3">長期</dd>
         <dt>選考</dt>
-            <dd><input type="radio" name="selection" value="S1">選考なし</dd>
             <dd><input type="radio" name="selection" value="S2">選考あり</dd>
+            <dd><input type="radio" name="selection" value="S1">選考なし</dd>
             <dd><input type="radio" name="selection" value="S3">選考落ち</dd>
+        <dt>業種</dt>
+            <dd>
+                <select name="industry">
+                <option value="農林・水産">農林・水産</option>
+                <option value="林業">林業</option>
+                <option value="漁業">漁業</option>
+                <option value="鉱業">鉱業</option>
+                <option value="建設業">建設業</option>
+                <option value="建築業">建築業</option>
+                <option value="製造業">製造業</option>
+                <option value="電気・ガス">電気・ガス</option>
+                <option value="卸売・小売・飲食業">卸売・小売・飲食業</option>
+                <option value="金融・保険業">金融・保険業</option>
+                <option value="不動産業">不動産業</option>
+                <option value="サービス業">サービス業</option>
+                <option value="分類不能産業">分類不能産業</option>
+                </select>
+            </dd>
         <dt>企業説明</dt>
             <dd><textarea name="explanation" rows="5">{{ old('explanation', $article->explanation) }}</textarea></dd>
         <dt>インターン内容</dt>
