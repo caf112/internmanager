@@ -22,6 +22,7 @@
 <a href="/articles" class="intern-index">参加済みインターン</a>
 
  <!--検索欄-->
+
  <form method="GET" action="{{ route('articles.search') }}">
    <!--<input type="search" placeholder="企業名を入力" name="search" value="@if (isset($search)) {{ $search }} @endif">-->
     <div class="group">
@@ -91,6 +92,7 @@
 
 
 @section('content')<!--一覧ーーーーーーーーーーーーーーーーーーー-->
+<h2>参加予定インターン一覧</h2>
         @foreach ($programs as $program)
         <program class="program-item">
             <div class="program-title">

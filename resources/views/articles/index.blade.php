@@ -90,6 +90,7 @@
 
 
 @section('content')<!--一覧ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー-->
+<h2 >参加済みインターン一覧</h2>
         @foreach ($articles as $article)
         <article class="program-item">
             <div class="program-title">
