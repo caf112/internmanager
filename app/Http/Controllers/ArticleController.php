@@ -15,12 +15,11 @@ class ArticleController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {
-        $articles = Article::all();
-        $sort = Article::orderBy('date', 'asc')->get();
-        $data = ['articles' => $sort];
-        return view('articles.index', $data);
-    }
+{
+    $articles = Article::orderBy('date', 'asc')->get(); // データをソートして取得
+    $data = ['articles' => $articles]; // データをビューに渡す
+    return view('articles.index', $data);
+}
 
     /**
      * Show the form for creating a new resource.
@@ -152,4 +151,47 @@ class ArticleController extends Controller
                 'search' => $search,
             ]);
         }
+
+    public function industryFilter(Request $request){
+        $industry = $request->input('industry');
+
+        if ($industry === 'all') {
+            // カテゴリが「全て」の場合はすべてのアイテムを取得
+            $articles = Article::all();
+        } else {
+            // 指定されたカテゴリで絞り込み
+            $articles = Article::where('industry', $industry)->get();
+        }
+
+        return view('articles.index', compact('articles'));
+    }
+
+    public function periodFilter(Request $request){
+        $period = $request->input('period');
+
+        if ($period === 'all') {
+            // カテゴリが「全て」の場合はすべてのアイテムを取得
+            $articles = Article::all();
+        } else {
+            // 指定されたカテゴリで絞り込み
+            $articles = Article::where('period', $period)->get();
+        }
+
+        return view('articles.index', compact('articles'));
+    }
+
+    public function selectionFilter(Request $request){
+        $selection = $request->input('selection_value'); // ボタンのvalueを取得
+    
+        if ($selection === 'all') {
+            // カテゴリが「全て」の場合はすべてのアイテムを取得
+            $articles = Article::all();
+        } else {
+            // 指定されたカテゴリで絞り込み
+            $articles = Article::where('selection', $selection)->get();
+        }
+    
+        return view('articles.index', compact('articles'));
+    }
+
 }
