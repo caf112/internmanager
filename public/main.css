@@ -82,8 +82,10 @@ button:hover, .btn:hover {
     background: #ddd;
 }
 
-.intern-index{
-    padding-bottom: 100px;
+a.intern-index {
+    color: #000; 
+    margin-bottom: 100px;
+    border-bottom: none;
 }
 
 .create-button {/*新規作成ボタン*/
@@ -107,6 +109,27 @@ button:hover, .btn:hover {
    button:hover {
     background-color: #0071e2;
    }
+
+   /*インターン一覧ボタン*/
+   a.intern-index {
+    font-family: monospace;
+    background-color: #f3f7fe;
+    color: #3b82f6;
+    border: none;
+    border-radius: 8px;
+    width: 200px;
+    height: 50px;
+    font-size:120%;
+    transition: .3s;
+    margin-bottom: 500px; 
+  }
+  
+  a.intern-index:hover {
+    background-color: #3b82f6;
+    box-shadow: 0 0 0 5px #3b83f65f;
+    color: #fff;
+  }
+  
 
 /*検索*/
    .group {
@@ -185,9 +208,7 @@ header nav ul li a.active {
     color: #333; /* リンクのテキストカラー */
 }
 
-.program-date{
 
-}
 
 
 /*article↓*/
@@ -219,19 +240,20 @@ dl.form-list {
 
 
 /*program↓*/
-.program-detail .article-title {
+.program-detail .article-title ,.program-detail .program-title {
     font-size: 1.4rem;
 }
 .program-info {
     font-size: .8rem;
     color: #777;
 }
-.program-body {
+.program-body ,.article-body{
     margin: 5rem 0;
     padding: 1rem 0;
     border-top: 1px dotted #ddd;
     border-bottom: 1px dotted #ddd;
 }
+
 .program-control {
     display: flex;
     justify-content: space-between;
