@@ -8,7 +8,7 @@
 @section('aside')<!--サイドバーーーーーーーーーーーーーーーーーーーーーーーーーーーーー-->
 
 <!--新規作成ボタン-->
-
+<li  id="litest">
 <a href="{{ route('articles.create') }}">
 <button class="create-button" >
   <span>
@@ -16,11 +16,9 @@
   </span>
 </button>
 </a>
-<br>
-<a href="/programs" class="intern-index">参加予定インターン</a>
-<br>
-<br>
-<a href="/articles" class="intern-index">参加済みインターン</a>
+</li>
+<li id="litest"><a href="/programs" class="intern-index">参加予定インターン</a></li>
+<li id="litest"><a href="/articles" class="intern-index">参加済みインターン</a></li>
 
 
  <!--検索欄-->
