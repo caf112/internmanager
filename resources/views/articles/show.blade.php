@@ -1,12 +1,13 @@
 @extends('layouts.app')
 @section('head')
-    <a href="/articles" class="site-title">活動内容</a>
+    <h1 class='app-title'>Intern Manager</h1>
+    <a href="/articles" class="site-title">トップへ戻る</a>
 @endsection()
 @section('content')
 <article class="article-detail">
     <h1 class="article-title">{{ $article->title }}</h1>
     <h1 class="article-date">{{ $article->date }}</h1>
-    <div class="article-info">{{ $article->created_at }}</div>
+    <div class="article-info">作成日{{ $article->created_at }}</div>
     <div class="article-period">{!! nl2br(e($article->period)) !!}</div>
     <div class="article-selection">{!! nl2br(e($article->selection)) !!}</div>
     <div class="article-industry">{!! nl2br(e($article->industry)) !!}</div>

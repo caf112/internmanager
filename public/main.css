@@ -226,7 +226,7 @@ header nav ul li a.active {
 
 
 /*共通↓*/
-.program-item {
+.contents-body{
     margin-bottom: 20px;
     padding: 20px;
     border-bottom: 1px solid #ddd;
@@ -235,7 +235,11 @@ header nav ul li a.active {
 .program-title a {
     font-weight: bold; /* リンク内のテキストを太字に */
     text-decoration: none; /* リンクの下線を非表示に */
-    color: #333; /* リンクのテキストカラー */
+    color: #333; /* リ
+    ンクのテキストカラー */
+}
+dl.form-list {
+    max-width: 600px;
 }
 
 
@@ -251,15 +255,7 @@ header nav ul li a.active {
     font-size: .8rem;
     color: #777;
 }
-.article-body {
-    margin: 1rem 0;
-    padding: 1rem 0;
-    border-top: 1px dotted #ddd;
-    border-bottom: 1px dotted #ddd;
-}
-dl.form-list {
-    max-width: 600px;
-}
+
 
 .article-control {
     display: flex;
@@ -277,12 +273,12 @@ dl.form-list {
     font-size: .8rem;
     color: #777;
 }
-.program-body ,.article-body{
-    margin: 5rem 0;
+/*.contents-body {
     padding: 1rem 0;
     border-top: 1px dotted #ddd;
     border-bottom: 1px dotted #ddd;
 }
+*/
 
 .program-control {
     display: flex;
