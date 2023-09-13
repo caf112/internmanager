@@ -304,3 +304,8 @@ dl.form-list {
 dt{
     margin-top:20px
 }
+
+.form-group{
+    padding: 20px;
+    border-bottom: 1px solid #ddd;
+}
