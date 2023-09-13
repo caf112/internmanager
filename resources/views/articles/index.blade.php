@@ -95,12 +95,14 @@
 @section('content')<!--一覧ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー-->
 <h2 >参加済みインターン一覧</h2>
         @foreach ($articles as $article)
+        <div class="contents-body">
         <article class="program-item">
             <div class="program-title">
             <a href="{{ route('articles.show', $article) }}">{{ $article->title }}</a>   
             </div>
             <div class="program-date">{{ $article->date }}</div>
         </article>
+        </div>
         @endforeach
         @if (count($articles) === 0)
             <p>No results found for "{{ $search }}"</p>

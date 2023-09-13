@@ -1,4 +1,4 @@
-<!--参加済予定-->
+<!--参加予定-->
 @extends('layouts.app')
 @section('head')
 
@@ -99,6 +99,7 @@
 @section('content')<!--一覧ーーーーーーーーーーーーーーーーーーー-->
 <h2>参加予定インターン一覧</h2>
         @foreach ($programs as $program)
+        <div class="contents-body">
         <program class="program-item">
             <div class="program-title">
             <a href="{{ route('programs.show', $program) }}">{{ $program->title }}</a>   
@@ -106,6 +107,7 @@
             <div class="program-date">{{ $program->date }}</div>
             <div class="program-time">{{ $program->time }}</div>
         </program>
+        </div>
         @endforeach
 
         
