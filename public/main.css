@@ -8,11 +8,14 @@ input[type="email"],
 input[type="password"],
 select,
 textarea {
-    width: 100%;
+    width: 70%;
     padding: 8px;
     border: 1px solid #bbb;
     border-radius: 4px;
 }
+
+
+
 header { /*Intern Manager*/
     display: flex;
     justify-content: space-between;
@@ -73,14 +76,17 @@ button, .btn {/*ボタン*/
     padding: 2px 8px;
     border: 1px solid rgba(0, 0, 0, 0.2);
     border-radius: 4px;
-    background: #eee;
-    color: #333;
+    background: #605f5f;
+    color: #ddd;
     font-size: .9rem;
     cursor: pointer;
+    
 }
 button:hover, .btn:hover {
     background: #ddd;
 }
+
+
 
 a.intern-index {
     color: #000; 
@@ -139,6 +145,8 @@ a.intern-index {
     position: relative;
     max-width: 190px;
     margin-bottom: 20px;
+    float: left;/*改行しない*/
+    margin-top: 30px;
    }
    
    .serch-input {
@@ -174,11 +182,33 @@ a.intern-index {
     height: 1rem;
    }
 
-   /*検索ここまで*/
+   /*検索ボタン*/
+   .search-button{
+    display: inline-block;
+    padding: 2px 8px;
+    border-radius: 4px;
+    background: #24b4fb;
+    color: #FFF;
+    font-size: .9rem;
+    cursor: pointer;
+    height: 40px;
+    margin-top: 30px;
+   }
+
+/*検索ここまで*/
+
+/*絞り込み*/
+.dropdown-button-container {
+   display: flex; /* フレックスボックスを使用して横並びに配置 */
+   align-items: center; /* 垂直方向の中央揃え */
+ }
 
 .filter-button{
-    margin-bottom: 30px;
+    font-size: small;
+    height: 35px;
 }
+
+
 
 header nav ul {
     display: flex;
@@ -196,7 +226,7 @@ header nav ul li a.active {
 
 
 /*共通↓*/
-.program-item {
+.contents-body{
     margin-bottom: 20px;
     padding: 20px;
     border-bottom: 1px solid #ddd;
@@ -205,7 +235,11 @@ header nav ul li a.active {
 .program-title a {
     font-weight: bold; /* リンク内のテキストを太字に */
     text-decoration: none; /* リンクの下線を非表示に */
-    color: #333; /* リンクのテキストカラー */
+    color: #333; /* リ
+    ンクのテキストカラー */
+}
+dl.form-list {
+    max-width: 600px;
 }
 
 
@@ -221,15 +255,7 @@ header nav ul li a.active {
     font-size: .8rem;
     color: #777;
 }
-.article-body {
-    margin: 1rem 0;
-    padding: 1rem 0;
-    border-top: 1px dotted #ddd;
-    border-bottom: 1px dotted #ddd;
-}
-dl.form-list {
-    max-width: 600px;
-}
+
 
 .article-control {
     display: flex;
@@ -247,12 +273,12 @@ dl.form-list {
     font-size: .8rem;
     color: #777;
 }
-.program-body ,.article-body{
-    margin: 5rem 0;
+/*.contents-body {
     padding: 1rem 0;
     border-top: 1px dotted #ddd;
     border-bottom: 1px dotted #ddd;
 }
+*/
 
 .program-control {
     display: flex;

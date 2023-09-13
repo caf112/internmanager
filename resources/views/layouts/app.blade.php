@@ -23,8 +23,21 @@
 </div>
     </main>
     <footer>
-        internmanaget
+        internmanager
+
     </footer>
+    <script>
+    // フッターをクリックした際にページの一番上にスクロールする関数
+    function scrollToTop() {
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth" // スムーズスクロールを有効にする
+      });
+    }
+
+    // フッターをクリックしたら scrollToTop 関数を実行する
+    document.getElementById("footer").addEventListener("click", scrollToTop);
+  </script>
 </body>
 </html>
 
