@@ -1,8 +1,9 @@
  @csrf 
+ <h2 class="form-title">新規登録</h2>
     <dl class="form-list">
-        <dt>企業名</dt>
+        <dt>企業名 <!--<p class="required">*必須</p>--></dt>
             <dd><input type="text" name="title" value="{{ old('title', $article->title) }}"></dd>
-        <dt>日時</dt>
+        <dt>日時 *</dt>
             <dd><input type="date" name="date" value="{{ old('date', $article->date) }}"> </dd><!--tableを日時に変更後、datetime-localに変更-->
         <dt>期間</dt>
             <dd><input type="radio" name="period" value="1DAY">1DAY</dd>
@@ -33,7 +34,7 @@
             </dd>
         <dt>企業説明</dt>
             <dd><textarea name="explanation" rows="5">{{ old('explanation', $article->explanation) }}</textarea></dd>
-        <dt>インターン内容</dt>
+        <dt>インターン内容 *</dt>
             <dd><textarea name="content" rows="5">{{ old('content', $article->content) }}</textarea></dd>
         <dt>感想</dt>
             <dd><textarea name="body" rows="5">{{ old('body', $article->body) }}</textarea></dd>

@@ -49,6 +49,7 @@ footer {
 .aside {
     flex: 1; /* 横幅を均等に分配 */
     padding: 30px; /* 余白を追加（調整可能） */
+    margin: 30px;
     background: #fff;
 }
 
@@ -56,6 +57,7 @@ footer {
 .content {
     flex: 4; /* 横幅を均等に分配 */
     padding: 30px; /* 余白を追加（調整可能） */
+    margin:10px 20px 10px 10px;
     background: #fff;
 }
 
@@ -283,4 +285,20 @@ dl.form-list {
 .program-control {
     display: flex;
     justify-content: space-between;
+}
+
+
+
+/*新規作成フォーム*/
+/*行間
+.form-list{
+ line-height: 2;
+}
+*/
+.form-title{
+    margin-bottom: 30px;
+}
+
+dt{
+    margin-top:20px
 }

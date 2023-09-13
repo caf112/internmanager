@@ -12,7 +12,8 @@
        
         @yield('head')
     </header>
-    <main class="container">
+
+    <main class="index-container">
         <div class="wrapper">
         <div class="aside">
             @yield('aside')
@@ -20,8 +21,9 @@
         <div class="content">
             @yield('content')
         </div>
-</div>
+        </div>
     </main>
+
     <footer>
         internmanager
 
