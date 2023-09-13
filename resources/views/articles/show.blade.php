@@ -25,3 +25,13 @@
     </div>
 </article>
 @endsection
+
+@section('aside')
+
+<article class="program-item">
+            <div class="program-title">
+            <a href="{{ route('articles.show', $article) }}">{{ $article->title }}</a>   
+            </div>
+            <div class="program-date">{{ $article->date }}</div>
+        </article>
+@endsection

@@ -49,15 +49,17 @@ footer {
 .aside {
     flex: 1; /* 横幅を均等に分配 */
     padding: 30px; /* 余白を追加（調整可能） */
-    margin: 30px;
+    margin: 2rem;
+    margin-top: 2rem;
     background: #fff;
 }
 
 /* メインコンテンツ（content）のスタイル */
 .content {
-    flex: 4; /* 横幅を均等に分配 */
+    flex: 3; /* 横幅を均等に分配 */
     padding: 30px; /* 余白を追加（調整可能） */
-    margin:10px 20px 10px 10px;
+    margin-top:1rem;
+    margin-right: 3rem;
     background: #fff;
 }
 
