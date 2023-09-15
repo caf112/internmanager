@@ -17,11 +17,11 @@
   </span>
 </button>
 </a>
-<br>
-<a href="/programs" class="intern-index">参加予定インターン</a>
-<br>
-<a href="/articles" class="intern-index">参加済みインターン</a>
 
+<ul>
+<li class="intern-index"><a href="/programs">参加予定インターン</a></li>
+<li class="intern-index"><a href="/articles">参加済みインターン</a></li>
+</ul>
 
  <!--検索欄-->
 <form method="GET" action="{{ route('articles.search') }}" >

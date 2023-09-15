@@ -14,7 +14,19 @@ textarea {
     border-radius: 4px;
 }
 
+a {
+    text-decoration: none;
+  }
+  /* 通常のリンクの色 */
+a {
+    color: blue;
+  }
+  
 
+  /* 訪問済みリンクの色 */
+  a:visited {
+    color: black;
+  }
 
 header { /*Intern Manager*/
     display: flex;
@@ -87,16 +99,12 @@ button, .btn {/*ボタン*/
     
 }
 button:hover, .btn:hover {
-    background: #ddd;
+    background: #080808;
 }
 
 
 
-a.intern-index {
-    color: #000; 
-    margin-bottom: 100px;
-    border-bottom: none;
-}
+
 
 .create-button {/*新規作成ボタン*/
     border: 2px solid #24b4fb;
@@ -105,10 +113,11 @@ a.intern-index {
     padding: 0.8em 1.2em 0.8em 1em;
     transition: all ease-in-out 0.2s;
     font-size: 16px;
-    margin-bottom: 40px;
+    margin-bottom: 20px;
+    margin-left:20px;
    }
    
-   button span {
+   .create-button span {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -116,30 +125,45 @@ a.intern-index {
     font-weight: 600;
    }
    
-   button:hover {
+   .create-button:hover {
     background-color: #0071e2;
    }
 
    /*インターン一覧ボタン*/
-   a.intern-index {
-    font-family: monospace;
-    background-color: #f3f7fe;
-    color: #3b82f6;
-    border: none;
-    border-radius: 8px;
-    width: 200px;
-    height: 50px;
-    font-size:120%;
-    transition: .3s;
-    margin-bottom: 500px; 
+
+   ul {
+    list-style-type: none; /* ブリットを非表示にする */
+    padding: 0; /* リストの内側の余白をゼロにする */
+  }
+    .intern-index{
+    padding: 12.5px 30px;
+    border: 0;
+    border-radius: 100px;
+    background-color: #ffffff;
+    color: #333;
+    font-weight: Bold;
+    font-size:16x;
+    transition: all 0.5s;
+    -webkit-transition: all 0.5s;
+    list-style-type: none;
+    margin-bottom: 20px;
+    margin-left: 5px;
+    width: 150px;
   }
   
-  a.intern-index:hover {
-    background-color: #3b82f6;
-    box-shadow: 0 0 0 5px #3b83f65f;
-    color: #fff;
+  .intern-index:hover {
+    background-color: #6fc5ff;
+    box-shadow: 0 0 20px #6fc5ff50;
+    transform: scale(1.1);
   }
   
+  .intern-index:active {
+    background-color: #3d94cf;
+    transition: all 0.25s;
+    -webkit-transition: all 0.25s;
+    box-shadow: none;
+    transform: scale(0.98);
+  }
 
 /*検索*/
    .group {
@@ -197,6 +221,10 @@ a.intern-index {
     cursor: pointer;
     height: 40px;
     margin-top: 30px;
+   }
+
+   .search-button:hover{
+    background-color: #0071e2;
    }
 
 /*検索ここまで*/
