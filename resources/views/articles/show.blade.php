@@ -1,12 +1,13 @@
 @extends('layouts.app')
 @section('head')
-    <a href="/articles" class="site-title">活動内容</a>
+    <h1><a href = "/articles"class='app-title'>Intern Manager</a></h1>
+    <a href="/articles" class="site-title">トップへ戻る</a>
 @endsection()
 @section('content')
 <article class="article-detail">
     <h1 class="article-title">{{ $article->title }}</h1>
     <h1 class="article-date">{{ $article->date }}</h1>
-    <div class="article-info">{{ $article->created_at }}</div>
+    <div class="article-info">作成日{{ $article->created_at }}</div>
     <div class="article-period">{!! nl2br(e($article->period)) !!}</div>
     <div class="article-selection">{!! nl2br(e($article->selection)) !!}</div>
     <div class="article-industry">{!! nl2br(e($article->industry)) !!}</div>
@@ -23,4 +24,28 @@
         </form>
     </div>
 </article>
+@endsection
+
+@section('aside')
+
+        <div class="contents-body">
+        <article class="program-item">
+            <div class="program-title">
+            <a href="{{ route('articles.show', $article) }}">{{ $article->title }}</a>   
+            </div>
+            <div class="program-date">{{ $article->date }}</div>
+        </article>
+        </div>
+
+        @foreach ($articles as $article)
+        <div class="contents-body">
+        <article class="program-item">
+            <div class="program-title">
+            <a href="{{ route('articles.show', $article) }}">{{ $article->title }}</a>   
+            </div>
+            <div class="program-date">{{ $article->date }}</div>
+        </article>
+        </div>
+        @endforeach
+
 @endsection

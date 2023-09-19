@@ -1,7 +1,8 @@
 @extends('layouts.app')
 @include('commons.errors')
 @section('head')
-    <a href="/articles" class="site-title">記録入力</a>
+    <h1><a herf="/articles" class='app-title'>Intern Manager</a></h1>
+    <a href="/articles" class="site-title">トップへ戻る</a>
 @endsection()
 @section('content')
 <form action="{{ route('articles.store') }}" method="post">

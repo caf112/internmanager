@@ -99,6 +99,7 @@ class ProgramController extends Controller
         $program->title = $request->title;
         $program->date = $request->date;
         $program->time = $request->time;
+        $program->period = $request->period;
         $program->content = $request->content;
         $program->place = $request->place;
         $program->save();

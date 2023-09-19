@@ -1,4 +1,8 @@
 @extends('layouts.app')
+@section('head')
+    <h1><a href="/articles" class='app-title'>Intern Manager</a></h1>
+    <a href="/articles" class="site-title">トップへ戻る</a>
+@endsection()
 @section('content')
 @include('commons.errors')
 <form action="{{ route('articles.update', $article) }}" method="post">

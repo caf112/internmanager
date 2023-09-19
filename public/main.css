@@ -8,11 +8,26 @@ input[type="email"],
 input[type="password"],
 select,
 textarea {
-    width: 100%;
+    width: 70%;
     padding: 8px;
     border: 1px solid #bbb;
     border-radius: 4px;
 }
+
+a {
+    text-decoration: none;
+  }
+  /* 通常のリンクの色 */
+a {
+    color: blue;
+  }
+  
+
+  /* 訪問済みリンクの色 */
+  a:visited {
+    color: black;
+  }
+
 header { /*Intern Manager*/
     display: flex;
     justify-content: space-between;
@@ -46,13 +61,17 @@ footer {
 .aside {
     flex: 1; /* 横幅を均等に分配 */
     padding: 30px; /* 余白を追加（調整可能） */
+    margin: 2rem;
+    margin-top: 2rem;
     background: #fff;
 }
 
 /* メインコンテンツ（content）のスタイル */
 .content {
-    flex: 4; /* 横幅を均等に分配 */
+    flex: 3; /* 横幅を均等に分配 */
     padding: 30px; /* 余白を追加（調整可能） */
+    margin-top:1rem;
+    margin-right: 3rem;
     background: #fff;
 }
 
@@ -73,13 +92,14 @@ button, .btn {/*ボタン*/
     padding: 2px 8px;
     border: 1px solid rgba(0, 0, 0, 0.2);
     border-radius: 4px;
-    background: #eee;
-    color: #333;
+    background: #605f5f;
+    color: #ddd;
     font-size: .9rem;
     cursor: pointer;
+    
 }
 button:hover, .btn:hover {
-    background: #ddd;
+    background: #080808;
 }
 
 .create-button {/*新規作成ボタン*/
@@ -89,12 +109,11 @@ button:hover, .btn:hover {
     padding: 0.8em 1.2em 0.8em 1em;
     transition: all ease-in-out 0.2s;
     font-size: 16px;
+    margin-bottom: 20px;
+    margin-left:20px;
    }
-#litest{ /*<li>タグにつけたid*/
-    margin-bottom: 10px;
-    list-style: none; /*「・」を消す*/
-}
-   button span {
+   
+   .create-button span {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -102,29 +121,45 @@ button:hover, .btn:hover {
     font-weight: 600;
    }
    
-   button:hover {
+   .create-button:hover {
     background-color: #0071e2;
    }
 
    /*インターン一覧ボタン*/
-   a.intern-index {
-    font-family: monospace;
-    background-color: #f3f7fe;
-    color: #3b82f6;
-    border: none;
-    border-radius: 8px;
-    width: 200px;
-    height: 50px;
-    font-size:120%;
-    transition: .3s;
+
+   ul {
+    list-style-type: none; /* ブリットを非表示にする */
+    padding: 0; /* リストの内側の余白をゼロにする */
+  }
+    .intern-index{
+    padding: 12.5px 30px;
+    border: 0;
+    border-radius: 100px;
+    background-color: #ffffff;
+    color: #333;
+    font-weight: Bold;
+    font-size:16x;
+    transition: all 0.5s;
+    -webkit-transition: all 0.5s;
+    list-style-type: none;
+    margin-bottom: 20px;
+    margin-left: 5px;
+    width: 150px;
   }
   
-  a.intern-index:hover {
-    background-color: #3b82f6;
-    box-shadow: 0 0 0 5px #3b83f65f;
-    color: #fff;
+  .intern-index:hover {
+    background-color: #6fc5ff;
+    box-shadow: 0 0 20px #6fc5ff50;
+    transform: scale(1.1);
   }
-
+  
+  .intern-index:active {
+    background-color: #3d94cf;
+    transition: all 0.25s;
+    -webkit-transition: all 0.25s;
+    box-shadow: none;
+    transform: scale(0.98);
+  }
 
 /*検索*/
    .group {
@@ -134,6 +169,8 @@ button:hover, .btn:hover {
     position: relative;
     max-width: 190px;
     margin-bottom: 20px;
+    float: left;/*改行しない*/
+    margin-top: 30px;
    }
    
    .serch-input {
@@ -169,11 +206,37 @@ button:hover, .btn:hover {
     height: 1rem;
    }
 
-   /*検索ここまで*/
+   /*検索ボタン*/
+   .search-button{
+    display: inline-block;
+    padding: 2px 8px;
+    border-radius: 4px;
+    background: #24b4fb;
+    color: #FFF;
+    font-size: .9rem;
+    cursor: pointer;
+    height: 40px;
+    margin-top: 30px;
+   }
+
+   .search-button:hover{
+    background-color: #0071e2;
+   }
+
+/*検索ここまで*/
+
+/*絞り込み*/
+.dropdown-button-container {
+   display: flex; /* フレックスボックスを使用して横並びに配置 */
+   align-items: center; /* 垂直方向の中央揃え */
+ }
 
 .filter-button{
-    margin-bottom: 30px;
+    font-size: small;
+    height: 35px;
 }
+
+
 
 header nav ul {
     display: flex;
@@ -191,7 +254,7 @@ header nav ul li a.active {
 
 
 /*共通↓*/
-.program-item {
+.contents-body{
     margin-bottom: 20px;
     padding: 20px;
     border-bottom: 1px solid #ddd;
@@ -200,7 +263,11 @@ header nav ul li a.active {
 .program-title a {
     font-weight: bold; /* リンク内のテキストを太字に */
     text-decoration: none; /* リンクの下線を非表示に */
-    color: #333; /* リンクのテキストカラー */
+    color: #333; /* リ
+    ンクのテキストカラー */
+}
+dl.form-list {
+    max-width: 600px;
 }
 
 
@@ -216,15 +283,7 @@ header nav ul li a.active {
     font-size: .8rem;
     color: #777;
 }
-.article-body {
-    margin: 1rem 0;
-    padding: 1rem 0;
-    border-top: 1px dotted #ddd;
-    border-bottom: 1px dotted #ddd;
-}
-dl.form-list {
-    max-width: 600px;
-}
+
 
 .article-control {
     display: flex;
@@ -242,14 +301,35 @@ dl.form-list {
     font-size: .8rem;
     color: #777;
 }
-.program-body ,.article-body{
-    margin: 5rem 0;
+/*.contents-body {
     padding: 1rem 0;
     border-top: 1px dotted #ddd;
     border-bottom: 1px dotted #ddd;
 }
+*/
 
 .program-control {
     display: flex;
     justify-content: space-between;
+}
+
+
+
+/*新規作成フォーム*/
+/*行間
+.form-list{
+ line-height: 2;
+}
+*/
+.form-title{
+    margin-bottom: 30px;
+}
+
+dt{
+    margin-top:20px
+}
+
+.form-group{
+    padding: 20px;
+    border-bottom: 1px solid #ddd;
 }

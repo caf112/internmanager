@@ -14,7 +14,9 @@ Route::post('/articles/periodFilter', [ArticleController::class, 'periodFilter']
 Route::post('/articles/selectionFilter', [ArticleController::class, 'selectionFilter'])->name('selectionFilter');
 
 Route::get('/programs/search', [ProgramController::class, 'search'])->name('programs.search');
-
+Route::post('/programs/industryFilter', [ArticleController::class, 'industryFilter'])->name('industryFilter');
+Route::post('/programs/periodFilter', [ArticleController::class, 'periodFilter'])->name('periodFilter');
+Route::post('/programs/selectionFilter', [ArticleController::class, 'selectionFilter'])->name('selectionFilter');
 
 Route::resource('/articles', ArticleController::class);
 
