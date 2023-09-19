@@ -31,8 +31,3 @@
 
 </body>
 </html>
-
-<!--
-<header>
-    <a href="/" class="site-title">企業一覧</a>
-</header>

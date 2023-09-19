@@ -28,24 +28,22 @@
 
 @section('aside')
 
-        <div class="contents-body">
-        <article class="program-item">
-            <div class="program-title">
-            <a href="{{ route('articles.show', $article) }}">{{ $article->title }}</a>   
-            </div>
-            <div class="program-date">{{ $article->date }}</div>
-        </article>
-        </div>
+@php
+use App\Models\Article;
 
-        @foreach ($articles as $article)
-        <div class="contents-body">
-        <article class="program-item">
-            <div class="program-title">
-            <a href="{{ route('articles.show', $article) }}">{{ $article->title }}</a>   
-            </div>
-            <div class="program-date">{{ $article->date }}</div>
-        </article>
+$articles = Article::orderBy('date', 'asc')->get(); 
+$data = ['articles' => $articles]; 
+@endphp
+
+@foreach ($articles as $article)
+    <div class="contents-body">
+    <article class="program-item">
+        <div class="program-title">
+        <a href="{{ route('articles.show', $article) }}">{{ $article->title }}</a>   
         </div>
-        @endforeach
+        <div class="program-date">{{ $article->date }}</div>
+    </article>
+    </div>
+    @endforeach
 
 @endsection

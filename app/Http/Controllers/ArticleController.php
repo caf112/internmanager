@@ -15,11 +15,11 @@ class ArticleController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-{
+    {
     $articles = Article::orderBy('date', 'asc')->get(); // データをソートして取得
     $data = ['articles' => $articles]; // データをビューに渡す
     return view('articles.index', $data);
-}
+    }
 
     /**
      * Show the form for creating a new resource.

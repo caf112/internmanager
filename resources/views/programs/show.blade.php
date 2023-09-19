@@ -21,3 +21,25 @@
     </div>
 </program>
 @endsection
+
+@section('aside')
+
+@php
+use App\Models\Program;
+
+$programs = Program::orderBy('date', 'asc')->orderBy('time', 'asc')->get();
+$data = ['programs' => $programs];
+@endphp
+
+@foreach ($programs as $program)
+    <div class="contents-body">
+    <program class="program-item">
+        <div class="program-title">
+        <a href="{{ route('programs.show', $program) }}">{{ $program->title }}</a>   
+        </div>
+        <div class="program-date">{{ $program->date }}</div>
+    </program>
+    </div>
+    @endforeach
+
+@endsection
