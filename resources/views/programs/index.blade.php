@@ -105,6 +105,8 @@
             <div class="program-date">{{ $program->date }}</div>
             <div class="program-time">{{ $program->time }}</div>
         </program>
+        <a href="{{ route('programs.show', $program) }}">{{ $program->title }}<button class="detail-button"> 詳細
+            </button></a>
         </div>
         @endforeach
 

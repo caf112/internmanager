@@ -102,6 +102,7 @@
             </div>
             <div class="program-date">{{ $article->date }}</div>
         </article>
+        <a href="{{ route('articles.show', $article) }}">{{ $article->title }}<button class="detail-button"> 詳細</button></a>
         </div>
         @endforeach
         @if (count($articles) === 0)
