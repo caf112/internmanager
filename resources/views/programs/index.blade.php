@@ -16,13 +16,13 @@
   </span>
 </button>
 </a>
-<br>
+<li>
 <a href="/programs" class="intern-index">参加予定インターン</a>
-<br>
-<br>
+</li>
+<li>
 <a href="/articles" class="intern-index">参加済みインターン</a>
-
- <!--検索欄-->
+</li> 
+<!--検索欄-->
 
  <form method="GET" action="{{ route('articles.search') }}">
    <!--<input type="search" placeholder="企業名を入力" name="search" value="@if (isset($search)) {{ $search }} @endif">-->
