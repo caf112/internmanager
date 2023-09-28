@@ -12,11 +12,12 @@ Route::get('/articles/search', [ArticleController::class, 'search'])->name('arti
 Route::post('/articles/industryFilter', [ArticleController::class, 'industryFilter'])->name('industryFilter');
 Route::post('/articles/periodFilter', [ArticleController::class, 'periodFilter'])->name('periodFilter');
 Route::post('/articles/selectionFilter', [ArticleController::class, 'selectionFilter'])->name('selectionFilter');
+Route::get('/articles/order', [ArticleController::class,'order'])->name('articles.order');
 
 Route::get('/programs/search', [ProgramController::class, 'search'])->name('programs.search');
-Route::post('/programs/industryFilter', [ArticleController::class, 'industryFilter'])->name('industryFilter');
-Route::post('/programs/periodFilter', [ArticleController::class, 'periodFilter'])->name('periodFilter');
-Route::post('/programs/selectionFilter', [ArticleController::class, 'selectionFilter'])->name('selectionFilter');
+Route::post('/programs/industryFilter', [ProgramController::class, 'industryFilter'])->name('industryFilter');
+Route::post('/programs/periodFilter', [ProgramController::class, 'periodFilter'])->name('periodFilter');
+Route::post('/programs/selectionFilter', [ProgramController::class, 'selectionFilter'])->name('selectionFilter');
 
 Route::resource('/articles', ArticleController::class);
 

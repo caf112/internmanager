@@ -14,11 +14,12 @@ class ArticleController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-    $articles = Article::orderBy('date', 'asc')->get(); // データをソートして取得
-    $data = ['articles' => $articles]; // データをビューに渡す
-    return view('articles.index', $data);
+        Log::debug('test3');
+        $order = $request->query('order', 'asc');
+        $articles = Article::orderBy('date', $order)->get();
+        return view('articles.index', compact('articles', 'order'));
     }
 
     /**
@@ -127,15 +128,10 @@ class ArticleController extends Controller
         return redirect(route('articles.index'));
     }
 
-    public function sort(Article $article)
-    {
-        $article = Article::orderBy('date', 'asc')->get();
-    }
-
     public function search(Request $request)
     {
         Log::debug('test2');
-
+        $order = $request->query('order', 'asc');
          $articles = Article::paginate(20);
 
         $search = $request->input('search');
@@ -156,11 +152,13 @@ class ArticleController extends Controller
             ->with([
                 'articles' => $articles,
                 'search' => $search,
+                'order' => $order,
             ]);
         }
 
     public function industryFilter(Request $request){
         $industry = $request->input('industry');
+        $order = $request->query('order', 'asc');
 
         if ($industry === 'all') {
             // カテゴリが「全て」の場合はすべてのアイテムを取得
@@ -170,11 +168,12 @@ class ArticleController extends Controller
             $articles = Article::where('industry', $industry)->get();
         }
 
-        return view('articles.index', compact('articles'));
+        return view('articles.index', compact('articles','order'));
     }
 
     public function periodFilter(Request $request){
         $period = $request->input('period');
+        $order = $request->query('order', 'asc');
 
         if ($period === 'all') {
             // カテゴリが「全て」の場合はすべてのアイテムを取得
@@ -184,11 +183,12 @@ class ArticleController extends Controller
             $articles = Article::where('period', $period)->get();
         }
 
-        return view('articles.index', compact('articles'));
+        return view('articles.index', compact('articles','order'));
     }
 
     public function selectionFilter(Request $request){
-        $selection = $request->input('selection_value'); // ボタンのvalueを取得
+        $selection = $request->input('selection'); // ボタンのvalueを取得
+        $order = $request->query('order', 'asc');
     
         if ($selection === 'all') {
             // カテゴリが「全て」の場合はすべてのアイテムを取得
@@ -198,7 +198,7 @@ class ArticleController extends Controller
             $articles = Article::where('selection', $selection)->get();
         }
     
-        return view('articles.index', compact('articles'));
+        return view('articles.index', compact('articles','order'));
     }
 
 }

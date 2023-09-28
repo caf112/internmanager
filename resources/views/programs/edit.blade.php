@@ -1,7 +1,7 @@
 @extends('layouts.app')
 @section('head')
-    <h1><a herf="/programs" class='app-title'>Intern Manager</a></h1>
-    <a href="/articles" class="site-title">トップへ戻る</a>
+    <h1><a href="/programs" class='app-title'>Intern Manager</a></h1>
+    <a href="/programs" class="site-title">トップへ戻る</a>
 @endsection()
 @section('content')
 @include('commons.errors')

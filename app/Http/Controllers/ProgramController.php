@@ -14,11 +14,11 @@ class ProgramController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        $programs = Program::orderBy('date', 'asc')->orderBy('time', 'asc')->get();
-        $data = ['programs' => $programs];
-        return view('programs.index', $data);
+        $order = $request->query('order', 'asc');
+        $programs = Program::orderBy('date', $order)->orderBy('time', $order)->get();
+        return view('programs.index', compact('programs', 'order'));
     }
 
     /**
@@ -50,6 +50,8 @@ class ProgramController extends Controller
         $program->title = $request->title;
         $program->date = $request->date;
         $program->time = $request->time;
+        $program->period = $request->period;
+        $program->selection = $request->selection;
         $program->content = $request->content;
         $program->place = $request->place;
         $program->save();
@@ -99,6 +101,7 @@ class ProgramController extends Controller
         $program->date = $request->date;
         $program->time = $request->time;
         $program->period = $request->period;
+        $program->selection = $request->selection;
         $program->content = $request->content;
         $program->place = $request->place;
         $program->save();
@@ -126,7 +129,7 @@ class ProgramController extends Controller
     {
         Log::debug('test2');
 
-
+        $order = $request->query('order', 'asc');
          $programs = Program::paginate(20);
 
         $search = $request->input('search');
@@ -147,6 +150,36 @@ class ProgramController extends Controller
             ->with([
                 'programs' => $programs,
                 'search' => $search,
+                'order' => $order
             ]);
+        }
+        public function industryFilter(Request $request){
+            $industry = $request->input('industry');
+            $order = $request->query('order', 'asc');
+    
+            if ($industry === 'all') {
+                // カテゴリが「全て」の場合はすべてのアイテムを取得
+                $programs = Program::all();
+            } else {
+                // 指定されたカテゴリで絞り込み
+                $programs = Program::where('industry', $industry)->get();
+            }
+    
+            return view('programs.index', compact('programs','order'));
+        }
+    
+        public function periodFilter(Request $request){
+            $period = $request->input('period');
+            $order = $request->query('order', 'asc');
+    
+            if ($period === 'all') {
+                // カテゴリが「全て」の場合はすべてのアイテムを取得
+                $programs = Program::all();
+            } else {
+                // 指定されたカテゴリで絞り込み
+                $programs = Program::where('period', $period)->get();
+            }
+    
+            return view('programs.index', compact('programs','order'));
         }
 }

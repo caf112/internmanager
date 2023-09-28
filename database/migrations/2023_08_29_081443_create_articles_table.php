@@ -18,11 +18,12 @@ class CreateArticlesTable extends Migration
             $table->string('title');//企業名
             $table->date('date');//日付
             $table->text('content');//内容
-            $table->text('body')->default('感想');
-            $table->char('evaluation')->default('B');
-            $table->text('explanation')->default('企業説明');
-            $table->char('selection')->default('S1');
-            $table->char('period')->default('P1');
+            $table->text('body');
+            $table->char('industry');
+            $table->char('evaluation');
+            $table->text('explanation');
+            $table->char('selection');
+            $table->char('period');
             $table->timestamps();
         });
     }

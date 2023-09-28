@@ -16,7 +16,10 @@
     <div class="article-body">{!! nl2br(e($article->body)) !!}</div>
     <div class="article-evaluation">{!! nl2br(e($article->evaluation)) !!}</div>
     <div class="article-control">
-        <a href="{{ route('articles.edit', $article) }}">編集</a>
+        <form method="GET" action="{{ route('articles.edit', $article) }}">
+            @csrf
+            <button type="submit">編集</button>
+        </form>
         <form onsubmit="return confirm('本当に削除しますか？')" action="{{ route('articles.destroy', $article) }}" method="post">
             @csrf 
             @method('delete')

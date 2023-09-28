@@ -289,17 +289,27 @@ dl.form-list {
     display: flex;
     justify-content: space-between;
 }
-
+.article-detail .article-content,.article-detail .article-industry,.article-detail .article-explanation,.article-detail .article-body,.article-detail .article-evaluation {
+    border-bottom: 1px solid #ccc;
+    padding: 10px;
+    margin: 10px 0;    
+} 
 
 
 
 /*program↓*/
-.program-detail .article-title ,.program-detail .program-title {
+.program-detail .program-title {
     font-size: 1.4rem;
 }
 .program-info {
     font-size: .8rem;
     color: #777;
+}
+
+.program-detail .program-content,.program-detail .program-place {
+    border-bottom: 1px solid #ccc;
+    padding: 10px;
+    margin: 10px 0;    
 }
 /*.contents-body {
     padding: 1rem 0;

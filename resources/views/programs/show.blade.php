@@ -10,9 +10,14 @@
     <div class="program-time">{{ $program->time }}</dev>
     <div class="program-info">作成日{{ $program->created_at }}</div>
     <div class="program-period">{!! nl2br(e($program->period)) !!}</div>
+    <div class="program-selection">{!! nl2br(e($program->selection)) !!}</div>
     <div class="program-content">{!! nl2br(e($program->content)) !!}</div>
+    <div class="program-place">{!! nl2br(e($program->place)) !!}</div>
     <div class="program-control">
-        <a href="{{ route('programs.edit', $program) }}">編集</a>
+        <form method="GET" action="{{ route('programs.edit', $program) }}">
+            @csrf
+            <button type="submit">編集</button>
+        </form>
         <form onsubmit="return confirm('本当に削除しますか？')" action="{{ route('programs.destroy', $program) }}" method="post">
             @csrf 
             @method('delete')

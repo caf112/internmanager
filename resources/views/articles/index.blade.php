@@ -78,11 +78,20 @@
         <button type="submit" class="filter-button">絞り込み</button>
     </div>
 </form>
-<a href="{{ route('selectionFilter', ['selection' => 'all']) }}">全て</a>
+<form action="{{ route('selectionFilter') }}" method="POST">
+    @csrf
 
-<a href="{{ route('selectionFilter', ['selection' => '選考なし']) }}">選考なし</a>
-<a href="{{ route('selectionFilter', ['selection' => '選考あり']) }}">選考あり</a>
-<a href="{{ route('selectionFilter', ['selection' => '選考落ち']) }}">選考落ち</a>
+    <p>選考別に検索</p>
+    <div class="dropdown-button-container">
+        <select name="selection" id="selectionFilter">
+            <option value="all">全て</option>
+            <option value="選考あり">選考あり</option>
+                    <option value="選考なし">選考なし</option>
+                    <option value="選考落ち">選考落ち</option>
+        </select>
+        <button type="submit" class="filter-button">絞り込み</button>
+    </div>
+</form>
 
 
 @endsection<!--サイドバーここまでーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー-->
@@ -92,6 +101,11 @@
 
 
 @section('content')<!--一覧ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー-->
+<form method="GET" action="{{ route('articles.index') }}">
+    @csrf
+    <input type="hidden" name="order" value="{{ $order === 'desc' ? 'asc' : 'desc' }}">
+    <button type="submit">↓↑</button>
+</form>
 <h2 >参加済みインターン一覧</h2>
         @foreach ($articles as $article)
         <div class="contents-body">
